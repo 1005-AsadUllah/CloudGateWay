@@ -7,7 +7,9 @@ import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JCircuit
 import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JConfigBuilder;
 import org.springframework.cloud.client.circuitbreaker.Customizer;
 import org.springframework.cloud.client.loadbalancer.reactive.ReactiveLoadBalancer;
+import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.context.annotation.Bean;
+import reactor.core.publisher.Mono;
 
 @SpringBootApplication
 public class CloudGateWayApplication {
@@ -17,6 +19,11 @@ public class CloudGateWayApplication {
     public static void main(String[] args) {
 		SpringApplication.run(CloudGateWayApplication.class, args);
 	}
+
+    @Bean
+    KeyResolver keyResolver() {
+        return exchange -> Mono.just("userkey");
+    }
 
 
     @Bean
