@@ -88,37 +88,47 @@
         </dependency>
 
 
+
+        <!-- ✅ Dotenv for Environment Variables -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>me.paulschwarz</groupId>
+            <artifactId>spring-dotenv</artifactId>
+            <version>4.0.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+
+     <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-test</artifactId>
+         <scope>test</scope>
+     </dependency>
+
+     <dependency>
+         <groupId>io.projectreactor</groupId>
+         <artifactId>reactor-test</artifactId>
+         <scope>test</scope>
+     </dependency>
+ </dependencies>
+ <dependencyManagement>
+     <dependencies>
+         <dependency>
+             <groupId>org.springframework.cloud</groupId>
+             <artifactId>spring-cloud-dependencies</artifactId>
+             <version>${spring-cloud.version}</version>
+             <type>pom</type>
+             <scope>import</scope>
+         </dependency>
+     </dependencies>
+ </dependencyManagement>
+
+ <build>
+     <plugins>
+         <plugin>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-maven-plugin</artifactId>
+         </plugin>
+     </plugins>
+ </build>
 
 </project>
